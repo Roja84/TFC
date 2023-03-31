@@ -1,0 +1,215 @@
+.en-tete {
+	text-align: center;
+	/*margin-top: -1em;*/
+	padding-top: 0.5em;
+	color: black;
+}
+
+.en-tete img {
+	width: 14em;
+	height: 5em;
+}
+
+body {
+	color: black;
+	background-color: white;
+	background-image: url(Data/background.jpg);
+	background-position: center center;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Medium, Eras ITC;
+}
+
+nav{
+	width: 100%;
+	margin: 0 auto;
+	background-color: none;
+	position: sticky;
+	top: 0px;
+}
+
+nav ul{
+	list-style-type: none;
+}
+
+nav ul li{
+	float: left;
+	width: 20%;
+	text-align: center;
+	position: relative;
+}
+
+nav ul::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+nav a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid transparent;
+	padding: 10px 0px;
+	background-color: #334650;
+}
+
+nav a:hover{
+	color: #83CCB4;
+	border-bottom: 2px solid #83CCB4;
+}
+
+.sous{
+	display: none;
+	box-shadow: 0px 1px 2px #CCC;
+	Background-color: #334650;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+}
+
+nav > ul li:hover .sous{
+	display: block;
+}
+
+.sous li{
+	float: none;
+	width: 100%;
+	text-align: center;
+}
+
+.sous a{
+	padding: 10px;
+	border-bottom: none;
+}
+.sous a:hover{
+	border-bottom: none;
+	background-color: #334650;
+}
+
+nav li:hover{
+	color: #83CCB4;
+	border-bottom: 2px solid #83CCB4;
+}
+
+.deroulant >a::after{
+	/*content:" ▼";*/
+	font-size: 12px;
+}
+
+div.body{
+	text-align:center;
+	font-style: none;
+	font-weight: bold;
+	font-family: Medium, Eras ITC;
+	font-size: 30px;
+	padding-top: 75px;
+}
+
+.images {
+	display: flex;
+	width: 700px;
+	height: 520px;
+	animation-duration: 30s;
+	animation-name: mesImages;
+	animation-iteration-count: infinite;
+}
+#defile {
+	width: 680px;
+	height: 520px;
+	overflow: hidden;
+	border: 2px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@keyframes mesImages {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-700px);
+	}
+	50% {
+		transform: translateX(-1400px);
+	}
+	75% {
+		transform: translateX(-2090px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+head {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.vds_titre {
+	text-align: center;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.vente_de_la_semaine h3 {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 2em;
+}
+
+.grille {
+	max-width: 1300px;
+	width: 80%;
+	height: auto;
+	margin: 30px auto;
+	/*border: 1px solid #000;*/
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 300px);
+	justify-content: center;
+	grid-gap: 25px;
+}
+
+.grid-item {
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+	padding-bottom: 2em;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.grille img {
+	border-radius: 10px;
+	border: 3px solid #334650;
+}
+
+.grille img:hover {
+	transition-duration: 1s;
+	transform: scale(1.1);
+	content: url('Data/grille/20230310_095507.jpg');
+	width: 300px;
+	height: 210px;
+}
+
+.pied_de_page {
+	padding-top: 0.75em;
+	height: 2em;
+	width: 100%;
+	background-color: #334650;
+	color: white;
+	text-align: center;
+}
+
+.pied_de_page h1 {
+	color: #334650;
+}
