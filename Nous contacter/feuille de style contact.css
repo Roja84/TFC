@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+	width: 0.7em;
+	background-color: none;
+	background-image: url(Data/background.jpg);
+	background-position: center center;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #334650;
+	border-radius: 30px;
+}
+
+p.scroller {
+	overflow: invisible;
+}
+
 .en-tete {
 	text-align: center;
 	/*margin-top: -1em;*/
