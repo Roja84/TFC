@@ -1,16 +1,40 @@
 let products = {
   data: [
     {
-      productName: "Sphalerite rouge orangé brute 15ct d'Espagne",
-      category: "Brutes",
-      price: "30",
-      image: "Data/sphalerite_1.jpg",
+      productName: "Améthyste brésilienn taille brillant 8.0ct",
+      category: "Facettées",
+      price: "96",
+      image: "Data/amethyste_1.jpg",
     },
+	{
+		productName: "Lapis Lazuli afghan 17ct",
+		category: "Facettées",
+		price:"108",
+		image: "Data/lapis_lazuli_1.jpg",
+	},
+	{
+		productName: "Lapis Lazuli afghan 11ct",
+		category: "Facettées",
+		price: "66",
+		image: "Data/lapis_lazuli_2.jpg",
+	},
     {
       productName: "Lot sphalerites synthétiques 125ct, productio chinoise",
       category: "Brutes",
       price: "49",
       image: "Data/sphalerite_2.jpg",
+    },
+    {
+      productName: "Schalenblende polonaise 18ct",
+      category: "Cabochons",
+      price: "129",
+      image: "Data/schalenblende_1.jpg",
+    },
+    {
+      productName: "Schalenblende polonaise 27ct",
+      category: "Cabochons",
+      price: "89",
+      image: "Data/schalenblende_2.jpg",
     },
     {
       productName: "Sphalerite Orange espagnole 40ct",
@@ -25,28 +49,16 @@ let products = {
       image: "Data/sphalerite_4.jpg",
     },
     {
-      productName: "Schalenblende polonaise 18ct",
-      category: "Cabochons",
-      price: "129",
-      image: "Data/schalenblende_1.jpg",
-    },
+      productName: "Sphalerite rouge orangé brute 15ct d'Espagne",
+      category: "Brutes",
+      price: "30",
+      image: "Data/sphalerite_1.jpg",
+    }/*,
     {
-      productName: "Schalenblende polonaise 27ct",
-      category: "Cabochons",
-      price: "89",
-      image: "Data/schalenblende_2.jpg",
-    },
-    /*{
-      productName: "Brown Men's Jacket",
-      category: "Jacket",
-      price: "189",
-      image: "brown-jacket.jpg",
-    },
-    {
-      productName: "Comfy Gray Pants",
-      category: "Bottomwear",
-      price: "49",
-      image: "comfy-gray-pants.jpg",
+      productName: "nom du produit affiché",
+      category: "la catégorie",
+      price: "prix en €",
+      image: "localisation de l'image",
     },*/
   ],
 };
