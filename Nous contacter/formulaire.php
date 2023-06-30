@@ -14,10 +14,10 @@ if (isset($_POST) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_
 		$message = $Formulaire->verifDataMail($message);
 
 		//envoie mail pour le proprio du formulaire
-		$monNom = "Guillaume RICHARD";
-		$destinataire = "admin@guillaume-richard.fr";
+		$monNom = "Romain Jaume";
+		$destinataire = "romain.jaume@gmail.com";
 
-		$sujetMail = "Tutoriel formulaire de contact : $prenom $nom vous a envoyé un message";
+		$sujetMail = "Formulaire de contact : $prenom $nom vous a envoyé un message";
 
 		$messageMail = "un nouveau message est arrivé \n De la part de $prenom $nom \n
 			Email : $email \n
