@@ -1,98 +1,124 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
-<title>TFC</title>
-<link rel="stylesheet" href="feuille de style contact.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width"/>
+   
+	<!-- référencement -->
+	<title>Formulaire de contact</title>
+	<meta name="Description" content="Création d'un formulaire de contact (xhtml/css), javascript, PHP et MySQL" />
+	<meta name="Keywords" content="formulaire, contact, (X)html/CSS, JS, PHP, MySQL" />
+   
+	<!-- CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Bigelow+Rules' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
 
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/additional-methods.min.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<script type="text/javascript" src="js/script.js"></script>
+	
 <div>
 <p class="scroller"></p>
 </div>
 
 <div class="en-tete">
-<a href="../index.html"><img src="../Data/logo_TFC_3.png" alt="logo TFC"></a>
+<!--<li><a href="index.html"><h1>WA-Gems</h1></a></li>-->
+<a href="../index.html"><img src="css/Data/logo_TFC_3.png" alt="logo TFC"></a>
 </div>
-
+	
 </head>
+
 <body>
+
+<!-- Partie TFC -->
+
 <nav>
 <ul>
 
 <div>
 <li class="deroulant"><a href="#">Qui sommes-nous ?</a>
 <ul class="sous">
-<li><a href="../Qui sommes-nous/Gemmologues/index_gemmo.html">Gemmologues</a></li>
-<li><a href="../Qui sommes-nous/WA-Gems/index_WA-Gems.html">WA-Gems</a></li>
+<li><a href="Qui sommes-nous/Gemmologues/index_gemmo.html">Gemmologues</a></li>
+<li><a href="Qui sommes-nous/WA-Gems/index_WA-Gems.html">WA-Gems</a></li>
 </ul>
 </li>
 
 <li class="deroulant"><a href="#">Nos produits et services &ensp;</a>
 <ul class="sous">
-<li><a href="../Nos produits et services/Gemmes/index_gemmes.html">Gemmes</a></li>
-<li><a href="../Nos produits et services/Rapport d'identification/index_rapportid.html">Rapport d'idenditification</a></li>
-<li><a href="../Nos produits et services/Création de bijou/index_crea.html">Création de bijou</a></li>
+<li><a href="Nos produits et services/Gemmes/index_gemmes.html">Gemmes</a></li>
+<li><a href="Nos produits et services/Rapport d'identification/index_rapportid.html">Rapport d'idenditification</a></li>
+<li><a href="Nos produits et services/Création de bijou/index_crea.html">Création de bijou</a></li>
 </ul>
 </li>
 
-<li><a href="../Actualités/index_actu.html"> Actualités</a></li>
-<li><a href="../Avis clients/index_avisclients.html"> Avis clients</a></li>
-<li><a href="../Nous contacter/index_contact.html"> Nous contacter</a></li>
+<li><a href="Actualités/index_actu.html"> Actualités</a></li>
+<li><a href="Avis clients/index_avisclients.html"> Avis clients</a></li>
+<li><a href="Nous contacter/index_contact.html"> Nous contacter</a></li>
 </div>
-
-</ul>
 </nav>
 
-<form method="post" action="mail.js">
-<script>
-<link rel="stylesheet" href="mail.js">
-</script>
+<!-- Fin partie TFC -->
 
-<h1>Nous contacter</h1>
-<div class="separation"></div>
-<div class="corps-formulaire">
-<div class="gauche">
+	<div class="body_container idea_container inner">
+		<div class="bott_container wrapper">
+			<div class="content_box">
+				<div class="left_box">
+					<h3>Nous contacter</h3>
+					<div id="map"></div>
+				</div>
 
-<div class="groupe">
-<label>Votre prénom</label>
-<input type="text">
-<i class="fas fa-user"></i>
-</div>
-
-<div class="groupe">
-<label>Votre adresse email</label>
-<input type="text">
-<i class="fas fa-envelope"></i>
-</div>
-
-<div class="groupe">
-<label>Votre téléphone</label>
-<input type="text">
-<i class="fas fa-mobile-alt"></i>
-</div>
-</div>
-
-<div class="droite">
-<div class="groupe">
-<label>Message</label>
-<textarea placeholder="Écrivez ici..."></textarea>
-</div>
-</div>
-</div>
-
-<div class="pied-formulaire" align="center">
-<button>Envoyer le message</button>
-</div>
-
-<input type="submit">
-
-</form>
+				<div class="right_box">
+					<div class="form_sec">
+						<?php
+							if (isset($_GET["yes"])){
+								echo "<p class='success'>Message envoyé</p>";
+							} else if (isset($_GET["no"])){
+								echo "<p class='fail'>Message non envoyé</p>";
+							}
+						?>
+						<form method="post" id="form_contact" action="formulaire.php">
+							<fieldset>
+								<ul>
+								<li>
+									<label>Nom :</label>
+									<div class="row"><input type="text" id="nom" name="nom" /></div>
+								</li>
+								<li>
+									<label>Prenom :</label>
+									<div class="row"><input type="text" id="prenom" name="prenom" /></div>
+								</li>
+								<li>
+									<label>E-mail :</label>
+									<div class="row"><input type="text" id="email" name="email" /></div>
+								</li>
+								<li>
+									<label>Téléphone :</label>
+									<div class="row"><input type="text" id="tel" name="tel" /></div>
+								</li>
+								<li>
+									<label>Sujet :</label>
+									<div class="row"><input type="text" id="sujet" name="sujet" /></div>
+								</li>
+								<li>
+									<label>Message :</label>
+									<div class="row description_row">
+										<textarea id="message" name="message" cols="" rows=""></textarea>
+									</div>
+								</li>
+								</ul>
+								<input type="submit" id="submit" value="Envoyer le message" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
 </body>
-
-<footer>
-
-<div class="pied_de_page">
-<h3>&copy; Copyright The French Cutter 2023</h3>
-</div>
-
-</footer>
 </html>
